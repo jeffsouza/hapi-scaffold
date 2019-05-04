@@ -12,6 +12,7 @@
     "hapi-scaffold": "./cli.js"
   },
   "dependencies": {
+    "fs-extra": "^7.0.1",
     "pluralize": "^7.0.0"
   },
   "devDependencies": {

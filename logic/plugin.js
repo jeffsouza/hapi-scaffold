@@ -11,10 +11,6 @@ class Plugin {
         const pluginNameCapitalized = pluginName.charAt(0).toUpperCase() + pluginName.slice(1);
         const pluginNameLowered = pluginName.toLowerCase();
 
-        if (!fs.existsSync('./plugins')){
-            fs.mkdirSync('./plugins');
-        }
-
         fs.readFile('./snippets/plugin', function(err, data) {
             data = data.toString().split('<PluginNameCapitalized>').join(pluginNameCapitalized);
             data = data.toString().split('<PluginNameLowered>').join(pluginNameLowered);

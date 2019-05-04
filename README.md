@@ -1,21 +1,24 @@
-# hapi-scaffold (work in progress)
+# hapi-scaffold
 
-Code generation for the [hapijs](https://hapijs.com/) framework.
+Code generation for the [hapijs](https://hapijs.com/) framework. **(work in progress)**
 
-### Initializes de application. Create the index.js with a basic config.
+### Initialize de application. Create the index.js with a basic config.
 > $ ./cli.js init
 
-### Creates the database configuration file.
+### Erase all folders and files generated. Use it carefully.
+> $ ./cli.js destroy
+
+### Create the database configuration file.
 > $ ./cli.js generate db:mongo
 
-### Generates a default CRUD for the given resource name.
+### Generate a default CRUD for the given resource name.
 > $ ./cli.js scaffold post **title:string** **content:string** **rating:number**
 
-### Generates a plugin file (and register it on the server).
+### Generate a plugin file (and register it on the server).
 > $ ./cli.js scaffold plugin post
 
-### Generates a service file. Here is where all the logic will be placed.
+### Generate a service file. Here is where all the logic will be placed.
 > $ ./cli.js scaffold service post
 
-### Generates the model file.
+### Generate the model file.
 > $ ./cli.js scaffold model post **title:string** **content:string** **rating:number**

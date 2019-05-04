@@ -9,10 +9,6 @@ class Model {
         const modelNameCapitalized = modelName.charAt(0).toUpperCase() + modelName.slice(1);
         const modelNameLowered = modelName.toLowerCase();
 
-        if (!fs.existsSync('./models')){
-            fs.mkdirSync('./models');
-        }
-
         fs.readFile('snippets/model', function(err, data) {
             attributes = formatAttributes(attributes);
             data = data.toString().split('<ModelName>').join(modelNameCapitalized);

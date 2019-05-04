@@ -5,10 +5,6 @@ const fs = require('fs');
 class DbMongo {
 
     static generate() {
-        if (!fs.existsSync('./config')){
-            fs.mkdirSync('./config');
-        }
-    
         fs.readFile('snippets/db_mongo', function(err, data) {
             fs.writeFileSync(`config/database.js`, data.toString());
         });

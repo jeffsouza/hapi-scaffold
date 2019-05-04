@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
+const fs = require('fs-extra');
+
+const folders = ['./config', './models', './plugins', './services'];
 
 class Init {
 
@@ -8,6 +10,12 @@ class Init {
         fs.readFile('snippets/index', function(err, data) {
             fs.writeFileSync(`index.js`, data.toString());
         });
+
+        for (var i = 0; i < folders.length; i++) {
+            if (!fs.existsSync(folders[i])){
+                fs.mkdirSync(folders[i]);
+            }
+        }
     
         console.log('Initialized!');
     }
@@ -15,7 +23,11 @@ class Init {
     static undo() {
         fs.unlinkSync('index.js');
 
-        console.log('Removed init!');
+        for (var i = 0; i < folders.length; i++) {
+            fs.removeSync(folders[i]);
+        }
+
+        console.log('Destroyed!');
     }
 
 }

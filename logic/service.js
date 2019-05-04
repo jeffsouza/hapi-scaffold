@@ -13,10 +13,6 @@ class Service {
         const modelNameCapitalized = modelName.charAt(0).toUpperCase() + modelName.slice(1);
         const modelNameLowered = modelName.toLowerCase();
 
-        if (!fs.existsSync('./services')){
-            fs.mkdirSync('./services');
-        }
-
         fs.readFile('snippets/service', function(err, data) {
             data = data.toString().split('<ServiceNameCapitalized>').join(serviceNameCapitalized);
             data = data.toString().split('<ServiceNameLowered>').join(serviceNameLowered);

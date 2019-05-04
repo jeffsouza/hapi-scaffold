@@ -9,13 +9,17 @@ const Service = require('./logic/service');
 const [,, ...args] = process.argv;
 
 
-if (args[0] != 'init' && args[0] != 'scaffold' && args[0] != 'generate' && args[0] != 'remove') {
+if (args[0] != 'init' && args[0] != 'destroy' && args[0] != 'scaffold' && args[0] != 'generate' && args[0] != 'remove') {
     console.log('Invalid options');
     return;    
 }
 
 if (args[0] == 'init') {
     Init.generate();
+}
+
+if (args[0] == 'destroy') {
+    Init.undo();
 }
 
 if (args[0] == 'generate') {

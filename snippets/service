@@ -1,0 +1,18 @@
+const <ModelNameCapitalized> = require('../models/<ModelNameLowered>');
+
+class <ServiceNameCapitalized> {
+
+    static async getAll() {
+        const <ServiceNameLowered> = await <ModelNameCapitalized>.find({});
+        return <ServiceNameLowered>;
+    }
+
+    static async create(<ModelNameLowered>Data) {
+        const <ModelNameLowered> = new <ModelNameCapitalized>(<ModelNameLowered>Data);
+        <ModelNameLowered>.save();
+        return <ModelNameLowered>;
+    }
+
+}
+
+module.exports = <ServiceNameCapitalized>;

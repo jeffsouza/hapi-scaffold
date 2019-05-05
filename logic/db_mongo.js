@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const path = require('path');
 
 class DbMongo {
 
     static generate() {
-        fs.readFile('snippets/db_mongo', function(err, data) {
+        fs.readFile(path.resolve(__dirname, '../snippets/db_mongo'), function(err, data) {
             fs.writeFileSync(`config/database.js`, data.toString());
         });
     

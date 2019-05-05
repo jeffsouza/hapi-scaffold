@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const path = require('path');
 const pluralize = require('pluralize');
 
 class Controller {
@@ -10,7 +11,7 @@ class Controller {
         const controllerNameCapitalized = controllerName.charAt(0).toUpperCase() + controllerName.slice(1);
         const controllerNameLowered = controllerName.toLowerCase();
 
-        fs.readFile('snippets/controller', function(err, data) {
+        fs.readFile(path.resolve(__dirname, '../snippets/controller'), function(err, data) {
             data = data.toString().split('<ControllerNameCapitalized>').join(controllerNameCapitalized);
             data = data.toString().split('<ServiceNameCapitalized>').join(controllerNameCapitalized);
             data = data.toString().split('<ServiceNameLowered>').join(controllerNameLowered);

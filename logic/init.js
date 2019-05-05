@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 const fs = require('fs-extra');
+const path = require('path');
 
 const folders = ['./config', './models', './routes', './services', './controllers'];
 
 class Init {
 
     static generate() {
-        fs.readFile('snippets/index', function(err, data) {
+        fs.readFile(path.resolve(__dirname, '../snippets/index'), function(err, data) {
             fs.writeFileSync(`index.js`, data.toString());
         });
 

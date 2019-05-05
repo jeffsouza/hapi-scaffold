@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const path = require('path');
 const pluralize = require('pluralize');
 
 class Service {
@@ -12,7 +13,7 @@ class Service {
         const modelNameCapitalized = modelName.charAt(0).toUpperCase() + modelName.slice(1);
         const modelNameLowered = modelName.toLowerCase();
 
-        fs.readFile('snippets/service', function(err, data) {
+        fs.readFile(path.resolve(__dirname, '../snippets/service'), function(err, data) {
             data = data.toString().split('<ServiceNameCapitalized>').join(serviceNameCapitalized);
             data = data.toString().split('<ServiceNameLowered>').join(serviceNameLowered);
             data = data.toString().split('<ModelNameCapitalized>').join(modelNameCapitalized);

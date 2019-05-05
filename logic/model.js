@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const path = require('path');
 const formatAttributes = require('../utils/format_attributes');
 
 class Model {
@@ -9,7 +10,7 @@ class Model {
         const modelNameCapitalized = modelName.charAt(0).toUpperCase() + modelName.slice(1);
         const modelNameLowered = modelName.toLowerCase();
 
-        fs.readFile('snippets/model', function(err, data) {
+        fs.readFile(path.resolve(__dirname, '../snippets/model'), function(err, data) {
             attributes = formatAttributes(attributes);
             data = data.toString().split('<ModelName>').join(modelNameCapitalized);
             data = data.toString().split('<Attributes>').join(attributes);

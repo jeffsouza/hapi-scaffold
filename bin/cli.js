@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-const Init = require('./logic/init');
-const DbMongo = require('./logic/db_mongo');
-const Model = require('./logic/model');
-const Route = require('./logic/route');
-const Service = require('./logic/service');
-const Controller = require('./logic/controller');
+const Init = require('../logic/init');
+const DbMongo = require('../logic/db_mongo');
+const Model = require('../logic/model');
+const Route = require('../logic/route');
+const Service = require('../logic/service');
+const Controller = require('../logic/controller');
 
 const [,, ...args] = process.argv;
+const validOptions = [ 'init', 'destroy', 'scaffold', 'generate', 'remove' ]
 
-
-if (args[0] != 'init' && args[0] != 'destroy' && args[0] != 'scaffold' && args[0] != 'generate' && args[0] != 'remove') {
+if (validOptions.indexOf(args[0]) == -1) {
     console.log('Invalid options');
     return;    
 }

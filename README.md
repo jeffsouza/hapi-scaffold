@@ -2,44 +2,47 @@
 
 Code generation for the [hapijs](https://hapijs.com/) framework. **(work in progress)**
 
+### Install it.
+> $ npm install hapi-scaffold2 -g
+
 ### Initialize de application. Create the index.js with a basic config.
-> $ ./cli.js init
+> $ hapi-scaffold init
 
 ### Erase all folders and files generated. Use it carefully.
-> $ ./cli.js destroy
+> $ hapi-scaffold destroy
 
 ### Create the database configuration file.
-> $ ./cli.js generate db:mongo
+> $ hapi-scaffold generate db:mongo
 
 ### Generate a default CRUD for the given resource name.
-> $ ./cli.js scaffold post **title:string** **content:string** **rating:number**
+> $ hapi-scaffold scaffold post **title:string** **content:string** **rating:number**
 
 ### Generate a route file (and register it on the server).
-> $ ./cli.js scaffold route post
+> $ hapi-scaffold scaffold route post
 
 ### Generate a controller file.
-> $ ./cli.js scaffold controller post
+> $ hapi-scaffold scaffold controller post
 
 ### Generate a service file. Here is where all the logic will be placed.
-> $ ./cli.js scaffold service post
+> $ hapi-scaffold scaffold service post
 
 ### Generate the model file.
-> $ ./cli.js scaffold model post **title:string** **content:string** **rating:number**
+> $ hapi-scaffold scaffold model post **title:string** **content:string** **rating:number**
 
 ### Remove the database configuration file.
-> $ ./cli.js remove db
+> $ hapi-scaffold remove db
 
 ### Remove CRUD files.
-> $ ./cli.js remove post
+> $ hapi-scaffold remove post
 
 ### Remove a route file (and unregister it on the server).
-> $ ./cli.js remove route post
+> $ hapi-scaffold remove route post
 
 ### Remove a controller file.
-> $ ./cli.js remove controller post
+> $ hapi-scaffold remove controller post
 
 ### Remove a service file.
-> $ ./cli.js remove service post
+> $ hapi-scaffold remove service post
 
 ### Remove the model file.
-> $ ./cli.js remove model post
+> $ hapi-scaffold remove model post

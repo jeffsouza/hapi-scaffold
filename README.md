@@ -25,3 +25,21 @@ Code generation for the [hapijs](https://hapijs.com/) framework. **(work in prog
 
 ### Generate the model file.
 > $ ./cli.js scaffold model post **title:string** **content:string** **rating:number**
+
+### Remove the database configuration file.
+> $ ./cli.js remove db
+
+### Remove CRUD files.
+> $ ./cli.js remove post
+
+### Remove a route file (and unregister it on the server).
+> $ ./cli.js remove route post
+
+### Remove a controller file.
+> $ ./cli.js remove controller post
+
+### Remove a service file.
+> $ ./cli.js remove service post
+
+### Remove the model file.
+> $ ./cli.js remove model post

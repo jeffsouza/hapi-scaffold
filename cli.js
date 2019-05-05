@@ -51,7 +51,9 @@ if (args[0] == 'scaffold') {
 }
 
 if (args[0] == 'remove') {
-    if (args[1] == 'model' && args[2] != undefined) {
+    if (args[1] == 'db') {
+        DbMongo.undo();
+    } else if (args[1] == 'model' && args[2] != undefined) {
         Model.undo(args[2]);
     } else if (args[1] == 'route' && args[2] != undefined) {
         Route.undo(args[2]);

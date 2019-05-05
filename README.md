@@ -14,8 +14,11 @@ Code generation for the [hapijs](https://hapijs.com/) framework. **(work in prog
 ### Generate a default CRUD for the given resource name.
 > $ ./cli.js scaffold post **title:string** **content:string** **rating:number**
 
-### Generate a plugin file (and register it on the server).
-> $ ./cli.js scaffold plugin post
+### Generate a route file (and register it on the server).
+> $ ./cli.js scaffold route post
+
+### Generate a controller file.
+> $ ./cli.js scaffold controller post
 
 ### Generate a service file. Here is where all the logic will be placed.
 > $ ./cli.js scaffold service post

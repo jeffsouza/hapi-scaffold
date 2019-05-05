@@ -5,11 +5,10 @@ const pluralize = require('pluralize');
 
 class Service {
 
-    static generate(serviceName) {
-        serviceName = pluralize.plural(serviceName);
+    static generate(modelName) {
+        const serviceName = pluralize.plural(modelName);
         const serviceNameCapitalized = serviceName.charAt(0).toUpperCase() + serviceName.slice(1);
         const serviceNameLowered = serviceName.toLowerCase();
-        const modelName = pluralize.singular(serviceName);
         const modelNameCapitalized = modelName.charAt(0).toUpperCase() + modelName.slice(1);
         const modelNameLowered = modelName.toLowerCase();
 

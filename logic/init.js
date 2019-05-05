@@ -2,7 +2,7 @@
 
 const fs = require('fs-extra');
 
-const folders = ['./config', './models', './plugins', './services'];
+const folders = ['./config', './models', './routes', './services', './controllers'];
 
 class Init {
 

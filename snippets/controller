@@ -1,0 +1,15 @@
+const <ServiceNameCapitalized> = require('../services/<ServiceNameLowered>');
+
+class <ControllerNameCapitalized>Controller {
+
+    static getAll(request, h) {
+        return <ServiceNameCapitalized>.getAll();
+    }
+
+    static create(request, h) {
+        return <ServiceNameCapitalized>.create(request.payload);
+    }
+
+}
+
+module.exports = <ControllerNameCapitalized>Controller;

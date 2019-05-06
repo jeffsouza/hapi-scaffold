@@ -3,7 +3,7 @@
 Code generation for the [hapijs](https://hapijs.com/) framework. **(work in progress)**
 
 ### Install it.
-> $ npm install hapi-scaffold2 -g
+> $ npm install hapi-scaffold -g
 
 ### Initialize de application. Create the index.js with a basic config.
 > $ hapi-scaffold init

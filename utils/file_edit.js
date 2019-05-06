@@ -7,7 +7,7 @@ class FileEdit {
 
         const lines = fs.readFileSync(fileName).toString().split('\n');
 
-        for await (const line of lines) {
+        for (const line of lines) {
             if (line.indexOf(searchText) != -1) {
                 result += `${line}\n`;
                 result += text;
@@ -24,7 +24,7 @@ class FileEdit {
 
         const lines = fs.readFileSync(fileName).toString().split('\n');
 
-        for await (const line of lines) {
+        for (const line of lines) {
             if (line.indexOf(searchText) == -1) {
                 result += `${line}\n`;
             }

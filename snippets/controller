@@ -6,8 +6,26 @@ class <ControllerNameCapitalized>Controller {
         return <ServiceNameCapitalized>.getAll();
     }
 
-    static create(request, h) {
-        return <ServiceNameCapitalized>.create(request.payload);
+    static findById(request, h) {
+        const <ModelNameLowered>Id = request.params.id;
+        return <ServiceNameCapitalized>.findById(<ModelNameLowered>Id);
+    }
+
+    static async create(request, h) {
+        const <ModelNameLowered> = await <ServiceNameCapitalized>.create(request.payload);
+        return h.response(<ModelNameLowered>).code(201);
+    }
+
+    static edit(request, h) {
+        const <ModelNameLowered>Id = request.params.id;
+        const <ModelNameLowered>Data = request.payload;
+        return <ServiceNameCapitalized>.edit(<ModelNameLowered>Id, <ModelNameLowered>Data);
+    }
+
+    static async delete(request, h) {
+        const <ModelNameLowered>Id = request.params.id;
+        await <ServiceNameCapitalized>.delete(<ModelNameLowered>Id);
+        return h.response({}).code(204);
     }
 
 }

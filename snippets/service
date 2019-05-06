@@ -7,10 +7,25 @@ class <ServiceNameCapitalized> {
         return <ServiceNameLowered>;
     }
 
+    static async findById(<ModelNameLowered>Id) {
+        const <ModelNameLowered> = await <ModelNameCapitalized>.findById(<ModelNameLowered>Id);
+        return <ModelNameLowered>;
+    }
+
     static async create(<ModelNameLowered>Data) {
         const <ModelNameLowered> = new <ModelNameCapitalized>(<ModelNameLowered>Data);
         <ModelNameLowered>.save();
         return <ModelNameLowered>;
+    }
+
+    static async edit(<ModelNameLowered>Id, <ModelNameLowered>Data) {
+        await <ModelNameCapitalized>.updateOne({_id: <ModelNameLowered>Id}, <ModelNameLowered>Data);
+        return this.findById(<ModelNameLowered>Id);
+    }
+
+    static async delete(<ModelNameLowered>Id) {
+        const result = await <ModelNameCapitalized>.deleteOne({_id: <ModelNameLowered>Id});
+        return result;
     }
 
 }

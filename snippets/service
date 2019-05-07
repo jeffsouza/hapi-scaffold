@@ -2,20 +2,16 @@ const <ModelNameCapitalized> = require('../models/<ModelNameLowered>');
 
 class <ServiceNameCapitalized> {
 
-    static async getAll() {
-        const <ServiceNameLowered> = await <ModelNameCapitalized>.find({});
-        return <ServiceNameLowered>;
+    static async getAll(filter) {
+        return <ModelNameCapitalized>.find(filter);
     }
 
     static async findById(<ModelNameLowered>Id) {
-        const <ModelNameLowered> = await <ModelNameCapitalized>.findById(<ModelNameLowered>Id);
-        return <ModelNameLowered>;
+        return <ModelNameCapitalized>.findById(<ModelNameLowered>Id);
     }
 
     static async create(<ModelNameLowered>Data) {
-        const <ModelNameLowered> = new <ModelNameCapitalized>(<ModelNameLowered>Data);
-        <ModelNameLowered>.save();
-        return <ModelNameLowered>;
+        return new <ModelNameCapitalized>(<ModelNameLowered>Data).save();
     }
 
     static async edit(<ModelNameLowered>Id, <ModelNameLowered>Data) {
@@ -24,8 +20,7 @@ class <ServiceNameCapitalized> {
     }
 
     static async delete(<ModelNameLowered>Id) {
-        const result = await <ModelNameCapitalized>.deleteOne({_id: <ModelNameLowered>Id});
-        return result;
+        return <ModelNameCapitalized>.deleteOne({_id: <ModelNameLowered>Id});
     }
 
 }

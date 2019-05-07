@@ -3,7 +3,8 @@ const <ServiceNameCapitalized> = require('../services/<ServiceNameLowered>');
 class <ControllerNameCapitalized>Controller {
 
     static getAll(request, h) {
-        return <ServiceNameCapitalized>.getAll();
+        const filter = request.query;
+        return <ServiceNameCapitalized>.getAll(filter);
     }
 
     static findById(request, h) {

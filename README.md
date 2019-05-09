@@ -15,7 +15,7 @@ Code generation for the [hapijs](https://hapijs.com/) framework. **(work in prog
 > $ hapi-scaffold generate db:mongo
 
 ### Generate a default CRUD for the given resource name.
-> $ hapi-scaffold scaffold post **title:string** **content:string** **rating:number**
+> $ hapi-scaffold scaffold post **title:string:required** **content:string** **rating:number**
 
 ### Generate a route file (and register it on the server).
 > $ hapi-scaffold scaffold route post
@@ -27,7 +27,7 @@ Code generation for the [hapijs](https://hapijs.com/) framework. **(work in prog
 > $ hapi-scaffold scaffold service post
 
 ### Generate the model file.
-> $ hapi-scaffold scaffold model post **title:string** **content:string** **rating:number**
+> $ hapi-scaffold scaffold model post **title:string:required** **content:string** **rating:number**
 
 ### Remove the database configuration file.
 > $ hapi-scaffold remove db

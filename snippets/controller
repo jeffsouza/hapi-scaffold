@@ -13,14 +13,22 @@ class <ControllerNameCapitalized>Controller {
     }
 
     static async create(request, h) {
-        const <ModelNameLowered> = await <ServiceNameCapitalized>.create(request.payload);
-        return h.response(<ModelNameLowered>).code(201);
+        try {
+            const <ModelNameLowered> = await <ServiceNameCapitalized>.create(request.payload);
+            return h.response(<ModelNameLowered>).code(201);
+        } catch(errors) {
+            return h.response(errors).code(422);
+        }
     }
 
     static edit(request, h) {
         const <ModelNameLowered>Id = request.params.id;
         const <ModelNameLowered>Data = request.payload;
-        return <ServiceNameCapitalized>.edit(<ModelNameLowered>Id, <ModelNameLowered>Data);
+        try {
+            return <ServiceNameCapitalized>.edit(<ModelNameLowered>Id, <ModelNameLowered>Data);
+        } catch(errors) {
+            return h.response(errors).code(422);
+        }
     }
 
     static async delete(request, h) {
